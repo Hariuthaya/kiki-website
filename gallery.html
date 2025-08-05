@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | KIKI</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    .gallery-section {
+      padding: 60px 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .gallery-title {
+      text-align: center;
+      font-size: 36px;
+      font-family: 'Playfair Display', serif;
+      color: #b03e75;
+      margin-bottom: 40px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 10001;
+    }
+
+    .lightbox-close:hover {
+      color: #ffccdd;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="assets/image/logo.jpg" alt="KIKI Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <h2 class="gallery-title">My Collections</h2>
+    <div class="gallery-grid">
+      <img src="assets/image/image1.jpg" alt="Makeup Look 1" onclick="openLightbox(this.src)">
+      <img src="assets/image/image2.jpg" alt="Makeup Look 2" onclick="openLightbox(this.src)">
+      <img src="assets/image/image3.jpg" alt="Makeup Look 3" onclick="openLightbox(this.src)">
+      <img src="assets/image/image4.jpg" alt="Makeup Look 4" onclick="openLightbox(this.src)">
+      <img src="assets/image/image5.jpg" alt="Makeup Look 5" onclick="openLightbox(this.src)">
+      <!-- Add more as needed -->
+    </div>
+  </section>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged Image">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="assets/image/logo.jpg" alt="KIKI Logo">
+      </div>
+      <p>&copy; 2025 KIKI ELEVATE YOUR ELEGANCE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox JavaScript -->
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    // Optional: Close on ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

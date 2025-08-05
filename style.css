@@ -1,0 +1,229 @@
+/* Header - with background pattern and overlay */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+  background: url('../images/f25536cb-a31b-474e-9234-7aa4f94f9535.png') no-repeat center;
+  background-size: cover;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Light overlay to improve contrast */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.85); 
+  z-index: -1;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 180px; 
+  width: auto;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+/* Nav styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #2c2c2c;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #fce4ec;
+  color: #b03e75;
+  box-shadow: 0 2px 10px rgba(176, 62, 117, 0.25);
+}
+
+/* Global body */
+body, .about-page {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Hero section (for both index and about) */
+.hero {
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 16px;
+  color: white;
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  padding-bottom: 80px; /* space from footer */
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #fce4ec;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #f0f0f0;
+}
+
+.hero a.cta-button {
+  display: inline-block;
+  background-color: #b03e75;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero a.cta-button:hover {
+  background-color: #8c2f5c;
+}
+
+/* Service Items */
+.service-item {
+  background: rgba(210, 136, 136, 0.85);
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.service-item h2 {
+  margin-top: 0;
+  color: #b03e75;
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  background: linear-gradient(to right, #4b2c3b, #1e1a1d);
+  color: #f9f9f9;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo img {
+  height: 100px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+  color: #ddd;
+}
+
+footer a {
+  color: #ffddee;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+.delay-3 {
+  animation-delay: 0.9s;
+}

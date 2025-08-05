@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | KIKI</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    .contact-section {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 60px 30px;
+    }
+
+    .contact-title {
+      text-align: center;
+      font-size: 36px;
+      font-family: 'Playfair Display', serif;
+      color: #b03e75;
+      margin-bottom: 40px;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .contact-form textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background-color: #b03e75;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #8c2f5c;
+    }
+
+    @media (max-width: 768px) {
+      .contact-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="assets/image/logo.jpg" alt="KIKI Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2 class="contact-title">Get in Touch</h2>
+    <form class="contact-form" action="https://formsubmit.co/hariprasathuthay@gmail.com" method="POST">
+      <!-- Hidden fields -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Optional redirect: uncomment the line below if needed -->
+      <!-- <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html"> -->
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="assets/image/logo.jpg" alt="KIKI Logo">
+      </div>
+      <p>&copy; 2025 KIKI ELEVATE YOUR ELEGANCE. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
